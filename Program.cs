@@ -16,3 +16,4 @@ string[] SearchForThrdCharString(string[] in_mas)
     return out_mas;
 }
 System.Console.WriteLine(String.Join("|", SearchForThrdCharString(in_mas)));
+
