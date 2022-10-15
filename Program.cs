@@ -1,25 +1,18 @@
-﻿string[] array1 = new string[5] {"123", "23", "hello", "world", "res"};
-string[] array2 = new string[array1.Length];
-void SecondArrayWithIF(string[] array1, string[] array2)
+﻿string[] in_mas = { "DayOfWeek", "devor", "del", "mar", "sam", "prokm", "end" };
+
+string[] SearchForThrdCharString(string[] in_mas)
 {
-    int count = 0;
-    for (int i = 0; i < array1.Length; i++)
+    string[] out_mas = new string[1];
+    int j = 0;
+    for (int i = 0; i < in_mas.Length; i++)
     {
-    if(array1[i].Length <= 3)
+        if (in_mas[i].Length <= 3)
         {
-        array2[count] = array1[i];
-        count++;
+            Array.Resize(ref out_mas, 1 + j);
+            out_mas[j] = in_mas[i];
+            j++;
         }
     }
+    return out_mas;
 }
-void PrintArray(string[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write($"{array[i]} ");
-    }
-    Console.WriteLine();
-}
-SecondArrayWithIF(array1, array2);
-PrintArray(array2);
-
+System.Console.WriteLine(String.Join("|", SearchForThrdCharString(in_mas)));
